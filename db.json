@@ -8,6 +8,5 @@
       "id": "lftCmJtvWdY",
       "title": "Yeni tapşırıq"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
