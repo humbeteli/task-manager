@@ -39,7 +39,7 @@ const Login = () => {
       return;
     }
 
-    if (email === "admin@gmail.com" && password === "123456") {
+    if (email === "test@gmail.com" && password === "888888") {
       localStorage.setItem("token", "mock-token");
 
       navigate("/tasks");
@@ -59,6 +59,7 @@ const Login = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+      <span>email: test@gmail.com</span>
 
       {emailError && <p>{emailError}</p>}
 
@@ -70,6 +71,7 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <span>sifre: 888888</span>
 
       {passwordError && <p>{passwordError}</p>}
 

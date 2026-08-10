@@ -12,10 +12,20 @@ const Tasks = () => {
       title: "Yeni tapşırıq",
     };
 
-    dispatch({
-      type: "ADD_TASK",
-      payload: newTask,
-    });
+    fetch("http://localhost:3000/tasks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTask),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({
+          type: "ADD_TASK",
+          payload: data,
+        });
+      });
   };
 
   const deleteTask = (id) => {
@@ -23,6 +33,32 @@ const Tasks = () => {
       type: "DELETE_TASK",
       payload: id,
     });
+
+    fetch(`http://localhost:3000/tasks/${id}`, {
+      method: "DELETE",
+    });
+  };
+
+  const updateTask = (task) => {
+    const updatedTask = {
+      ...task,
+      title: "Task dəyişdirildi",
+    };
+
+    fetch(`http://localhost:3000/tasks/${task.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedTask),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({
+          type: "UPDATE_TASK",
+          payload: data,
+        });
+      });
   };
 
   const handleLogout = () => {
@@ -40,9 +76,9 @@ const Tasks = () => {
         <div key={task.id}>
           <span>{task.title}</span>
 
-          <button onClick={() => deleteTask(task.id)}>
-            Sil
-          </button>
+          <button onClick={() => deleteTask(task.id)}>Sil</button>
+
+          <button onClick={() => updateTask(task)}>Dəyiş</button>
         </div>
       ))}
 
