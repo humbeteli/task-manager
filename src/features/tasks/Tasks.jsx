@@ -139,10 +139,11 @@ const Tasks = () => {
         <Logo />
       </div>
 
-      <div>
+      <div className="input-buttons">
         <input
           type="text"
           placeholder="Tabulaya əlavə et..."
+          className="input-area"
           value={newTaskTitle}
           onChange={(e) => setNewTaskTitle(e.target.value)}
         />
