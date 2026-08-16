@@ -1,8 +1,0 @@
-.login__page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}

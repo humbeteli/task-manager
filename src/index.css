@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family:
     system-ui,
@@ -17,4 +21,7 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+    background: linear-gradient(135deg, #d9f7dc, #eafbea, #ffffff);
+     background-attachment: fixed;
+     min-height: 100vh;
 }

@@ -1,4 +1,5 @@
 import { createContext, useReducer, useEffect } from "react";
+import { fetchTasks } from "../../services/taskService";
 
 const TaskContext = createContext();
 
@@ -38,15 +39,14 @@ const taskReducer = (state, action) => {
 const TaskProvider = ({ children }) => {
   const [state, dispatch] = useReducer(taskReducer, initialState);
 
+  // Tətbiq açılanda taskları serverdən çəkirik
   useEffect(() => {
-    fetch("http://localhost:3000/tasks")
-      .then((response) => response.json())
-      .then((data) => {
-        dispatch({
-          type: "SET_TASKS",
-          payload: data,
-        });
+    fetchTasks().then((data) => {
+      dispatch({
+        type: "SET_TASKS",
+        payload: data,
       });
+    });
   }, []);
 
   return (

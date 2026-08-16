@@ -1,12 +1,9 @@
 {
   "tasks": [
     {
-      "id": "JxNwXpL8UGI",
-      "title": "Yeni tapşırıq"
-    },
-    {
-      "id": "lftCmJtvWdY",
-      "title": "Yeni tapşırıq"
+      "id": "TPKMlbJyKjU",
+      "title": "java"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

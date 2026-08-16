@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Tasks from "./pages/Tasks";
+import Login from "./features/auth/Login";
+import Tasks from "./features/tasks/Tasks";
 import { Navigate } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import ErrorBoundary from "./components/ErrorBoundary";
